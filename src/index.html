@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Generador de Cartas Aleatorias</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
+    <!-- Fontawesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -15,21 +15,112 @@
     />
   </head>
   <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>🎴 Generador de Cartas Aleatorias</h1>
+        <p class="subtitle">Genera cartas aleatorias cada vez que recargues la página o presiones el botón. ¡Personaliza el tamaño y activa el temporizador automático!</p>
+        
+        <div class="row">
+          <div class="col-md-8">
+            <p>Este proyecto genera cartas aleatorias con uno de los 4 palos (♥ ♦ ♣ ♠) y valores del As al Rey.</p>
+            <p><strong>Instrucciones:</strong> Usa los controles a continuación para generar cartas, cambiar su tamaño o activar el temporizador automático.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="timer-info">
+              <h5><i class="fas fa-clock"></i> Estado del Temporizador:</h5>
+              <span id="timer-status" class="badge bg-danger">Temporizador detenido</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Carta -->
+      <div class="card-container">
+        <div id="card" class="card">
+          <div id="card-value" class="card-value">A</div>
+          <div id="card-suit" class="card-suit">♥</div>
+        </div>
+      </div>
+      
+      <!-- Controles -->
+      <div class="controls">
+        <h3><i class="fas fa-sliders-h"></i> Controles</h3>
+        
+        <div class="row">
+          <!-- Generar carta -->
+          <div class="col-lg-4 mb-4">
+            <h5>Generar Nueva Carta</h5>
+            <p>Genera una carta aleatoria inmediatamente.</p>
+            <button id="generate-btn" class="btn btn-primary btn-lg">
+              <i class="fas fa-random"></i> Generar Nueva Carta
+            </button>
+          </div>
+          
+          <!-- Temporizador -->
+          <div class="col-lg-4 mb-4">
+            <h5>Temporizador Automático</h5>
+            <p>Genera una nueva carta automáticamente cada 10 segundos.</p>
+            <button id="timer-toggle-btn" class="btn btn-success btn-lg">
+              <i class="fas fa-play"></i> Iniciar Temporizador (10s)
+            </button>
+          </div>
+          
+          <!-- Tamaño personalizado -->
+          <div class="col-lg-4 mb-4">
+            <h5>Tamaño Personalizado</h5>
+            <p>Cambia el tamaño de la carta (entre 50-500px ancho, 50-700px alto).</p>
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fas fa-arrows-alt-h"></i></span>
+              <input type="number" id="width-input" class="form-control" placeholder="Ancho (px)" min="50" max="500">
+            </div>
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fas fa-arrows-alt-v"></i></span>
+              <input type="number" id="height-input" class="form-control" placeholder="Alto (px)" min="50" max="700">
+            </div>
+            
+            <button id="apply-size-btn" class="btn btn-warning">
+              <i class="fas fa-check"></i> Aplicar Tamaño
+            </button>
+            <button id="reset-size-btn" class="btn btn-secondary">
+              <i class="fas fa-undo"></i> Restablecer
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Información de palos -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="alert alert-info">
+            <h5><i class="fas fa-info-circle"></i> Palos de Cartas</h5>
+            <ul class="mb-0">
+              <li><strong>Corazones ♥</strong>: Color rojo</li>
+              <li><strong>Diamantes ♦</strong>: Color rojo</li>
+              <li><strong>Tréboles ♣</strong>: Color negro</li>
+              <li><strong>Picas ♠</strong>: Color negro</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="alert alert-light">
+            <h5><i class="fas fa-star"></i> Valores Posibles</h5>
+            <p class="mb-0">As (A), 2, 3, 4, 5, 6, 7, 8, 9, 10, Jota (J), Reina (Q), Rey (K)</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <div class="footer">
+        <p>Proyecto Generador de Cartas Aleatorias</p>
+        <p>Hecho con ❤️ por <a href="https://www.4geeksacademy.com">4Geeks Academy</a></p>
+        <p><small>Cada vez que recargues la página, se generará una nueva carta aleatoria.</small></p>
       </div>
     </div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
+    <!-- Script -->
     <script type="module" src="/app.js"></script>
   </body>
 </html>

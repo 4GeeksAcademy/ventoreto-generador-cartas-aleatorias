@@ -1,5 +1,225 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
-    background: white;
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Estilos para la carta */
+.card-container {
+  perspective: 1000px;
+  margin: 0 auto 40px;
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-value {
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-suit {
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los diferentes palos */
+.heart, .diamonds {
+  border: 8px solid #ff4757;
+}
+
+.club, .spades {
+  border: 8px solid #2f3542;
+}
+
+.heart .card-suit, .diamonds .card-suit {
+  color: #ff4757;
+}
+
+.club .card-suit, .spades .card-suit {
+  color: #2f3542;
+}
+
+/* Controles */
+.controls {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.controls h3 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 12px 24px;
+  margin: 5px;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  transform: translateY(-3px);
+}
+
+.btn-warning {
+  background-color: #f39c12;
+  border-color: #f39c12;
+}
+
+.btn-warning:hover {
+  background-color: #d35400;
+  border-color: #d35400;
+  transform: translateY(-3px);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group-text {
+  background-color: #34495e;
+  color: white;
+  border: none;
+}
+
+.form-control {
+  border: 2px solid #ddd;
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.timer-info {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #ecf0f1;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.footer a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+    height: 280px;
+  }
+  
+  .card-value {
+    font-size: 70px;
+  }
+  
+  .card-suit {
+    font-size: 60px;
+  }
+  
+  .header, .controls {
+    padding: 20px;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
